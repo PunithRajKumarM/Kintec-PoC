@@ -36,12 +36,15 @@ It focuses on **3D visualization**, **model manipulation**, and **cropping tools
 
 ## **Features**
 
-✅ Import STL models  
-✅ 3D view with orbit controls  
+✅ Import STL models (from src/assets/Kintec)
+✅ 3D view with orbit controls 
+✅ Control model opacity
 ✅ Translate, rotate, and scale models  
 ✅ Box crop and auto crop  
 ✅ Undo / redo for cropping  
 ✅ Auto zoom after import and crop
+✅ Preset dimension adjustment for insoles
+    (first selected model = foot, second selected model = insole)
 
 ***
 
