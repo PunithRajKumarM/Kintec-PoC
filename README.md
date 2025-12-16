@@ -64,7 +64,7 @@ Clone the repository:
 
 ```bash
 git clone <repo-url>
-cd foot-model-editor
+cd Kintec-PoC
 ```
 
 Install dependencies:
