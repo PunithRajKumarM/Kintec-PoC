@@ -1,0 +1,13 @@
+/* App.css or a global stylesheet */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebar {
+    /* Required to hide the scrollbar thumb in IE/Edge/Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  /* Firefox */
+}
