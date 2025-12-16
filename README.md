@@ -1,73 +1,103 @@
-# React + TypeScript + Vite
+# **Foot Model Editor (Kintec PoC)**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A desktop application Proof of Concept for orthopedic foot and insole modeling.  
+The application allows importing 3D foot models (STL), viewing, transforming, cropping, and exporting models for further manufacturing workflows.
 
-Currently, two official plugins are available:
+***
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Table of Contents**
 
-## React Compiler
+*   Overview
+*   Tech Stack
+*   Features
+*   Screenshots
+*   Installation
+*   Run & Build
+*   Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+***
 
-## Expanding the ESLint configuration
+## **Overview**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This PoC demonstrates a workflow for orthopedic foot modeling using modern web technologies packaged as a desktop app.  
+It focuses on **3D visualization**, **model manipulation**, and **cropping tools** for STL files.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+***
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## **Tech Stack**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+*   **Frontend:** React + TypeScript
+*   **3D Rendering:** Three.js / React Three Fiber
+*   **Desktop Packaging:** Electron
+*   **Build Tool:** Vite
+*   **State Management:** Zustand
+
+***
+
+## **Features**
+
+✅ Import STL models  
+✅ 3D view with orbit controls  
+✅ Translate, rotate, and scale models  
+✅ Box crop and auto crop  
+✅ Undo / redo for cropping  
+✅ Auto zoom after import and crop
+
+***
+
+## **Screenshots**
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+
+***
+
+## **Installation**
+
+Clone the repository:
+
+```bash
+git clone <repo-url>
+cd foot-model-editor
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+***
+
+## **Run & Build**
+
+Run the application in development mode:
+
+```bash
+npm run dev
+```
+
+Build the Electron application:
+
+```bash
+npm run electron:build
+```
+
+***
+
+## **Prerequisites**
+
+Ensure the following are installed:
+
+*   **Node.js v18 or above**
+*   **npm** (comes with Node.js)
+*   **Git**
+
+Check versions:
+
+```bash
+node -v    # Should return v18.x.x or higher
+npm -v     # Should return npm version (8.x or higher)
 ```
